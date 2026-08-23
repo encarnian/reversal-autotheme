@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reversal-autotheme"
+version = "1.0.0"
+description = "Universal macOS Squircle Icon Theming Engine for Linux Desktops"
+readme = "README.md"
+authors = [{ name = "Google Antigravity Pair Programmer & Community" }]
+license = { text = "MIT" }
+requires-python = ">=3.8"
+dependencies = [
+    "Pillow>=9.0.0",
+    "numpy>=1.20.0"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: X11 Applications :: Gnome",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Desktop Environment :: Gnome"
+]
+
+[project.scripts]
+reversal-autotheme = "reversal_autotheme.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

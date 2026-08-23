@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Reversal Auto-Theme
+Comment=Generate macOS-style squircle icons for installed apps
+Exec=reversal-autotheme --all --notify
+Icon=reversal-autotheme
+Categories=Utility;
+Terminal=false
+StartupNotify=true
+Keywords=icons;theme;reversal;macos;squircle;

@@ -1,0 +1,15 @@
+Source: reversal-autotheme
+Section: utils
+Priority: optional
+Maintainer: Reversal Auto-Theme Maintainers <support@example.com>
+Build-Depends: debhelper (>= 11), dh-python, python3-all, python3-setuptools
+Standards-Version: 4.5.0
+Homepage: https://github.com/reversal-icon-theme/reversal-autotheme
+
+Package: reversal-autotheme
+Architecture: all
+Depends: ${python3:Depends}, ${misc:Depends}, python3-pil, python3-numpy, librsvg2-bin, libnotify-bin
+Description: Universal macOS Squircle Icon Theming Engine for Linux Desktops
+ Reversal Auto-Theme dynamically scans all installed desktop applications,
+ extracts upstream branding, and generates pixel-perfect macOS-style squircle
+ icons matching the Reversal theme specification with live desktop refreshing.

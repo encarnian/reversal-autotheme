@@ -1,0 +1,27 @@
+# Maintainer: Google Antigravity & Community
+pkgname=reversal-autotheme
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Universal macOS squircle icon theming engine for Linux desktops"
+arch=('any')
+url="https://github.com/reversal-icon-theme/reversal-autotheme"
+license=('MIT')
+depends=('python' 'python-pillow' 'python-numpy' 'librsvg' 'libnotify' 'gtk3')
+makedepends=('python-setuptools' 'python-build' 'python-installer' 'python-wheel')
+source=("$pkgname-$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+    cd "$pkgname-$pkgver"
+    python -m build --wheel --no-isolation
+}
+
+package() {
+    cd "$pkgname-$pkgver"
+    python -m installer --destdir="$pkgdir" dist/*.whl
+
+    install -Dm644 data/reversal-autotheme.desktop "$pkgdir/usr/share/applications/reversal-autotheme.desktop"
+    install -Dm644 data/icons/reversal-autotheme.svg "$pkgdir/usr/share/icons/hicolor/scalable/apps/reversal-autotheme.svg"
+    install -Dm644 data/icons/512x512/reversal-autotheme.png "$pkgdir/usr/share/icons/hicolor/512x512/apps/reversal-autotheme.png"
+    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
